@@ -61,7 +61,6 @@ export default function NoteForm() {
         placeholder="Title"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
-        autofocus
       />
       <input
         type="text"

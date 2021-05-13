@@ -1,8 +1,9 @@
-import { createStore, combineReducers, applyMiddleware } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
+import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import authReducer from '../reducers/authReducer';
 import notesReducer from '../reducers/notesReducer';
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const configureStore = () => {
   const store = createStore(
@@ -10,7 +11,7 @@ const configureStore = () => {
       auth: authReducer,
       notes: notesReducer,
     }),
-    composeWithDevTools(applyMiddleware(thunk))
+    composeEnhancers(applyMiddleware(thunk))
   );
 
   return store;
