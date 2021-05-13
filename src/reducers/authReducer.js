@@ -1,11 +1,11 @@
-const initialState = { user: {} };
+const initialState = { user: {}, isAuth: false };
 
 const authReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'LOGIN':
-      return { user: action.user };
+      return { user: action.user, isAuth: true };
     case 'LOGOUT':
-      return { user: {} };
+      return { user: {}, isAuth: false };
     default:
       return state;
   }

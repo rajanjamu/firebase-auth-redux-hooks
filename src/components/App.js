@@ -6,7 +6,7 @@ import { auth } from '../vendors/firebase';
 import { loginSync, logoutSync } from '../actions/authActions';
 
 function App() {
-  const user = useSelector((state) => state.user);
+  const isAuth = useSelector((state) => state.auth.isAuth);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -26,7 +26,7 @@ function App() {
   return (
     <div className="App">
       <Login />
-      {user ? <Dashboard /> : ''}
+      {isAuth ? <Dashboard /> : ''}
     </div>
   );
 }

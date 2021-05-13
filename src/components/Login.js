@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { login, logout } from '../actions/authActions';
 
 export default function Login() {
-  const user = useSelector((state) => state.user);
+  const isAuth = useSelector((state) => state.auth.isAuth);
   const dispatch = useDispatch();
 
   const handleLogin = () => {
@@ -16,7 +16,7 @@ export default function Login() {
 
   return (
     <div>
-      {user ? (
+      {isAuth ? (
         <button onClick={handleLogout}>Logout</button>
       ) : (
         <button onClick={handleLogin}>Login with Google</button>
