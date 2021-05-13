@@ -47,5 +47,9 @@
   },
   "prettier": {
     "singleQuote": true
+  },
+  "engines": {
+    "npm": "7.11.2",
+    "node": "14.16.1"
   }
 }
