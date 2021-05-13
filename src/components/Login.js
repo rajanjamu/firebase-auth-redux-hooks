@@ -6,9 +6,15 @@ export default function Login() {
 
   const dispatch = useDispatch();
 
+  const handleLogin = () => {
+    setError('');
+  };
+
   return (
     <div>
       <h3>Login Page</h3>
+      {error && <p>{error}</p>}
+      <button onClick={handleLogin}>Login with Google</button>
     </div>
   );
 }
