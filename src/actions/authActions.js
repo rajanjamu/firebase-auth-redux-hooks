@@ -1,8 +1,8 @@
 import { auth, googleAuthProvider } from '../vendors/firebase';
 
-export const loginSync = (uid) => ({
+export const loginSync = (user) => ({
   type: 'LOGIN',
-  uid,
+  user,
 });
 
 export const login = () => {
@@ -20,3 +20,7 @@ export const logout = () => {
     return auth.signOut();
   };
 };
+
+export const isAuth = () => ({
+  
+})
